@@ -1,6 +1,6 @@
 // src/clothing-items/dto/create-clothing-item.dto.ts
 
-import { IsNotEmpty, IsString, IsUrl } from 'class-validator';
+import { IsNotEmpty, IsString } from 'class-validator';
 
 export class CreateClothingItemDto {
   @IsString()
@@ -11,7 +11,5 @@ export class CreateClothingItemDto {
   @IsNotEmpty()
   category: string;
 
-  @IsUrl()
-  @IsNotEmpty()
-  imageUrl: string;
+  // O campo imageUrl foi removido daqui.
 }
