@@ -1,0 +1,10 @@
+-- CreateTable
+CREATE TABLE "ClothingItem" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "name" TEXT NOT NULL,
+    "category" TEXT NOT NULL,
+    "imageUrl" TEXT NOT NULL,
+    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "ownerId" INTEGER NOT NULL,
+    CONSTRAINT "ClothingItem_ownerId_fkey" FOREIGN KEY ("ownerId") REFERENCES "User" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
+);

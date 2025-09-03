@@ -1,0 +1,35 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+// Seu modelo User original, agora com a nova linha
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  name      String?
+  password  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  clothingItems ClothingItem[]
+}
+
+// Modelo para as peças de roupa
+model ClothingItem {
+  id          Int      @id @default(autoincrement())
+  name        String
+  category    String   // Ex: "Camiseta", "Calça", "Sapato"
+  imageUrl    String   // Onde a imagem da roupa será armazenada
+  createdAt   DateTime @default(now())
+
+  // --- Relação com o Usuário ---
+  ownerId     Int      // Chave estrangeira para o User
+  owner       User     @relation(fields: [ownerId], references: [id])
+}
