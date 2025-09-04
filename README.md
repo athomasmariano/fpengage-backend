@@ -53,7 +53,7 @@ Siga os passos abaixo para configurar e executar o projeto localmente.
 
 1.  **Clone o repositório:**
     ```bash
-    git clone [https://github.com/SEU_USUARIO/engage-backend.git](https://github.com/SEU_USUARIO/engage-backend.git)
+    git clone [https://github.com/athomasmariano/engage-backend.git](https://github.com/athomasmariano/engage-backend.git)
     cd engage-backend
     ```
     2.  **Instale as dependências:**
